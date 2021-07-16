@@ -1,4 +1,4 @@
-# Basic Node API
+# Node API Boilerplate
 
 This project contains all code related to the API for the base framework.
 
