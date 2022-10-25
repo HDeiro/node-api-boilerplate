@@ -4,6 +4,7 @@ import * as cors from 'cors';
 import helmet from 'helmet';
 import * as bodyParser from 'body-parser';
 import { configure } from "log4js";
+import routeDefs from "./endpoints/engine/route";
 
 const path    = require('path');
 const rootDir = require('./utils/path');
@@ -58,7 +59,7 @@ configure({
 });
 
 // Routes
-app.use('/engine', require('./routes/engine.route'));
+app.use(routeDefs.path, routeDefs.router);
 app.get('/', (_, res) => res.send('Node App!'));
 
 // Listener

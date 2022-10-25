@@ -6,11 +6,11 @@
   "license": "ISC",
   "scripts": {
     "start": "npm run watch",
-    "watch": "ts-node-dev src/app.ts",
+    "watch": "ts-node-dev -r esm src/app.ts",
     "build": "rimraf ./dist && tsc",
-    "test": "jest --config ./jest.config.js",
-    "test:watch": "npm run test -- --watch",
-    "test:coverage": "jest --coverage"
+    "test": "PORT=9938 jest --config ./jest.config.js",
+    "test:watch": "PORT=9938 npm run test -- --watch",
+    "test:coverage": "PORT=9938 jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "body-parser": "1.20.1",
     "cors": "2.8.5",
     "dotenv": "16.0.3",
+    "esm": "3.2.25",
     "express": "4.18.2",
     "helmet": "6.0.0",
     "log4js": "6.7.0"
