@@ -35,7 +35,7 @@ The current options available on the `sample.env` file are:
 
 - `npm start` will run the application locally without using docker.
 
-> Note: Doing this way you may not leverage any future containers that you can add on you `docker-compose.yml` file for databases and things alike.
+> **Note:** Doing this way you may not leverage any future containers that you can add on you `docker-compose.yml` file for databases and things alike.
 
 ### 4) Executing test suite
 
@@ -53,4 +53,7 @@ You may notice that this boilerplate projects already have one endpoint configur
 - `route.ts`*, where you're going to link the path (i.e. `/engine`) with the settings desired for that endpoint (like the GET method defined in a controller). 
 - `test.spec.ts`, test file where you're going to describe the test cases you want to apply in your endpoints (hopefully you're going to use it, right? 😁)
 
-> Important Note: We've defined a dynamic route loading strategy on `src/router.ts` where it will recursively read all `router.ts` files that exists inside of the `/src/endpoints` folder. Then it will dynamically define all the endpoints via `Application.use(<endpoint>, <ExpressRouter>)` method. So, whenever creating a new endpoint please stick to the pattern defined on the example (at least for the router file).
+> **Important Note**: We've defined a dynamic route loading strategy on `src/router.ts` where it will recursively read all `router.ts` files that exists inside of the `/src/endpoints` folder. Then it will dynamically define all the endpoints via `Application.use(<endpoint>, <ExpressRouter>)` method. So, whenever creating a new endpoint please stick to the pattern defined on the example (at least for the router file). \
+> \
+> With this approach you may be able to easily define strategies to filter when a module may be loaded or not (via feature toggles and things alike).
+
