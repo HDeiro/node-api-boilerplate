@@ -18,12 +18,12 @@ If you just cloned the project you're going to note a file in the root of the pr
 The options in the environment file are:
  
 
-|   KEY 	    |  DESCRIPTION  	                                      |  EXAMPLE 	                                          |
-|---	        |---	                                                  |---	                                                |
-|  PORT 	    | Port in which the application will be running         |  9054 	                                            |
-|  HOST 	    | Hostname in which the application will be running  	  |  https://base.com	                                  |
-|  LOG_PATH 	|  Path to the location where the logs must be stored 	|  /home/user/base/logs 	                              |
-|  LOG_LEVEL 	|  Minimal log level to be persisted 	                  |  TRACE or DEBUG or INFO or WARN or ERROR or FATAL 	|
+|   KEY 	    |  DESCRIPTION  	                                      |  EXAMPLE 	                                          | DEFAULTS  |
+|---	        |---	                                                  |---	                                                | --------- |
+|  PORT 	    | Port in which the application will be running         |  9054 	                                            | 3000      |
+|  HOST 	    | Hostname in which the application will be running  	  |  https://base.com	                                  | localhost |
+|  LOG_PATH 	|  Path to the location where the logs must be stored 	|  /home/user/base/logs 	                            | logs      |
+|  LOG_LEVEL 	|  Minimal log level to be persisted 	                  |  TRACE or DEBUG or INFO or WARN or ERROR or FATAL 	| WARN      |
 
  
 
