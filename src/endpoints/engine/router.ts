@@ -6,4 +6,5 @@ const router = express.Router();
 
 router.get('/', controller.get);
 
+// Must be default due to dynamic route definitions
 export default new RouterDefinitions('/engine', router);
