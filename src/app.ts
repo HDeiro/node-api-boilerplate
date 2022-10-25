@@ -2,16 +2,17 @@ import * as express from 'express';
 import * as dotenv from 'dotenv';
 import * as cors from 'cors';
 import * as bodyParser from 'body-parser';
+import * as path from 'path';
 import helmet from 'helmet';
-import routeDefs from "./endpoints/engine/router";
 import startLogEngine from './utils/log-configurations';
 import { rootDir } from './utils/path';
 import loadRoutes from './router';
 
-const path = require('path');
-
 // Load Environment Variables
 dotenv.config();
+
+// Defines the path to SRC (this folder)
+process.env.PATHS_SRC = __dirname;
 
 // Start log configs
 startLogEngine();
@@ -32,5 +33,7 @@ loadRoutes(app);
 const server = app.listen(process.env.PORT, () =>
   console.log(`Listening on ${process.env.HOST}:${process.env.PORT}`));
 
-// Exports
-module.exports = { app, server };
+// Exports just for testing purposes
+if (process.env.TESTING) {
+  module.exports = { app, server };
+}

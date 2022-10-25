@@ -8,9 +8,9 @@
     "start": "npm run watch",
     "watch": "ts-node-dev -r esm src/app.ts",
     "build": "rimraf ./dist && tsc",
-    "test": "PORT=9938 jest --config ./jest.config.js",
-    "test:watch": "PORT=9938 npm run test -- --watch",
-    "test:coverage": "PORT=9938 jest --coverage"
+    "test": "PORT=9938 TESTING=true jest --config ./jest.config.js",
+    "test:watch": "PORT=9938 TESTING=true npm run test -- --watch",
+    "test:coverage": "PORT=9938 TESTING=true jest --coverage"
   },
   "repository": {
     "type": "git",

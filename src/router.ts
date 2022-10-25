@@ -1,7 +1,6 @@
 import { Application } from "express";
 import { getLogger } from "log4js";
 import { getFilesPaths } from "./utils/files";
-import { rootDir } from "./utils/path";
 
 const logger = getLogger('RouterLoader');
 
@@ -12,7 +11,7 @@ const logger = getLogger('RouterLoader');
  * @returns string[]
  */
 function getRoutesToBeLoaded(): string[] {
-  return getFilesPaths(`${rootDir}/endpoints`)
+  return getFilesPaths(`${process.env.PATHS_SRC}/endpoints`)
     .filter(path => path.endsWith('/router.ts'));
 }
 
