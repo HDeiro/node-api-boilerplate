@@ -1,7 +1,7 @@
 import * as express from 'express';
 import * as dotenv from 'dotenv';
 import * as cors from 'cors';
-import * as helmet from 'helmet';
+import helmet from 'helmet';
 import * as bodyParser from 'body-parser';
 import { configure } from "log4js";
 
