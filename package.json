@@ -1,8 +1,8 @@
 {
-  "name": "base-api",
+  "name": "node-boilerplate-api",
   "author": "Hugo Deiró",
   "version": "0.0.0",
-  "homepage": "https://gitlab.com/base/base-api#readme",
+  "homepage": "https://gitlab.com/base/node-boilerplate-api#readme",
   "license": "ISC",
   "scripts": {
     "start": "npm run watch",
@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/base/base-api.git"
+    "url": "git+ssh://git@gitlab.com/base/node-boilerplate-api.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/base/base-api/issues"
+    "url": "https://gitlab.com/base/node-boilerplate-api/issues"
   },
   "dependencies": {
     "body-parser": "1.20.1",
