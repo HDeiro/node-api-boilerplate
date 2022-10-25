@@ -44,3 +44,13 @@ The current options available on the `sample.env` file are:
 - `npm run test:watch` will watch for changes on the test suite and reran the tests that had some change.
 
 - `npm run test:coverage` will generate a report of JEST test coverage.
+
+### 5) Creating new endpoints
+
+You may notice that this boilerplate projects already have one endpoint configured (`/src/endpoints/engine`). Checking that example you'll see:
+
+- `controller.ts`, where you're going to define what will happen when the endpoint is hit.
+- `route.ts`*, where you're going to link the path (i.e. `/engine`) with the settings desired for that endpoint (like the GET method defined in a controller). 
+- `test.spec.ts`, test file where you're going to describe the test cases you want to apply in your endpoints (hopefully you're going to use it, right? 😁)
+
+> Important Note: We've defined a dynamic route loading strategy on `src/router.ts` where it will recursively read all `router.ts` files that exists inside of the `/src/endpoints` folder. Then it will dynamically define all the endpoints via `Application.use(<endpoint>, <ExpressRouter>)` method. So, whenever creating a new endpoint please stick to the pattern defined on the example (at least for the router file).
