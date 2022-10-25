@@ -1,22 +1,25 @@
 # Node API Boilerplate
 
-This project contains all code related to the API for the base framework.
+Boilerplate project with some utilities for creating APIs with Node JS. Some features already preconfigured here are:
+
+  - Dynamic route loading
+  - Testing suite (JEST)
+  - Docker
 
 ### 1)  Dependencies  
-
-You must have available in your environment node with the minimum version `v12`.
 
 As soon as you clone the project from the repository you must run `npm i` in order to download the dependencies of tools used in the app.
  
 ### 2) Configuring the application
  
-If you just cloned the project you're going to note a file in the root of the project called `sample.env`. 
+  - Duplicate `sample.env`
+  - Rename the duplicate to `.env` 
+  
+If you need to change the default settings, do so into the `.env` files.
 
-- Create a **copy** of this file and rename the copied file to `.env`; 
-- After doing this you can fill the environmental attributes for the base API. 
+> New environment configurations can be added. However, it's strongly suggested to replicate those on `sample.env` as well (since that's the file being tracked on git).
 
-The options in the environment file are:
- 
+The current options available on the `sample.env` file are:
 
 |   KEY 	    |  DESCRIPTION  	                                      |  EXAMPLE 	                                          | DEFAULTS  |
 |---	        |---	                                                  |---	                                                | --------- |
@@ -24,17 +27,20 @@ The options in the environment file are:
 |  HOST 	    | Hostname in which the application will be running  	  |  https://base.com	                                  | localhost |
 |  LOG_PATH 	|  Path to the location where the logs must be stored 	|  /home/user/base/logs 	                            | logs      |
 |  LOG_LEVEL 	|  Minimal log level to be persisted 	                  |  TRACE or DEBUG or INFO or WARN or ERROR or FATAL 	| WARN      |
-
- 
+|  BREAK_ON_ROUTE_ERROR 	|  Defines if dynamic router loader should halt the app or not | 1 (enabled) or 0 (disabled) 	| true      |
 
 ### 3) Running the app
  
-If you want to run it locally you must execute `npm start` or `npm run watch`.
+- `npm start:docker` will run docker-compose. If you don't have docker installed, do so following the [documentation](https://docs.docker.com/engine/install/).
 
-In order to build the application to deploy you just need to run `npm run build`.
+- `npm start` will run the application locally without using docker.
+
+> Note: Doing this way you may not leverage any future containers that you can add on you `docker-compose.yml` file for databases and things alike.
 
 ### 4) Executing test suite
 
-To run the test suite you just need to execute `npm run test`. If you're working in the tests you might want to stay watching changes in the spec files. In this case, you'll use `npm run test:watch`. 
+- `npm run test` will run test suite once.
 
-To check the test coverage execute `npm run test:coverage`.
+- `npm run test:watch` will watch for changes on the test suite and reran the tests that had some change.
+
+- `npm run test:coverage` will generate a report of JEST test coverage.

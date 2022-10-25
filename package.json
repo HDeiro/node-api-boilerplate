@@ -6,6 +6,7 @@
   "license": "ISC",
   "scripts": {
     "start": "npm run watch",
+    "start:docker": "docker-compose up",
     "watch": "ts-node-dev -r esm src/app.ts",
     "build": "rimraf ./dist && tsc",
     "test": "PORT=9938 TESTING=true jest --config ./jest.config.js",
