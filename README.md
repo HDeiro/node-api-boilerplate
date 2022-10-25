@@ -27,7 +27,7 @@ The current options available on the `sample.env` file are:
 |  HOST 	    | Hostname in which the application will be running  	  |  https://base.com	                                  | localhost |
 |  LOG_PATH 	|  Path to the location where the logs must be stored 	|  /home/user/base/logs 	                            | logs      |
 |  LOG_LEVEL 	|  Minimal log level to be persisted 	                  |  TRACE or DEBUG or INFO or WARN or ERROR or FATAL 	| WARN      |
-|  BREAK_ON_ROUTE_ERROR 	|  Defines if dynamic router loader should halt the app or not | 1 (enabled) or 0 (disabled) 	| true      |
+|  BREAK_ON_ROUTE_ERROR 	|  Defines if dynamic router loader should halt the app or not | 1 (enabled) or 0 (disabled) 	| 1      |
 
 ### 3) Running the app
  
