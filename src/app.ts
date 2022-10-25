@@ -3,9 +3,10 @@ import * as dotenv from 'dotenv';
 import * as cors from 'cors';
 import * as bodyParser from 'body-parser';
 import helmet from 'helmet';
-import routeDefs from "./endpoints/engine/route";
+import routeDefs from "./endpoints/engine/router";
 import startLogEngine from './utils/log-configurations';
 import { rootDir } from './utils/path';
+import loadRoutes from './router';
 
 const path = require('path');
 
@@ -25,8 +26,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(rootDir, 'assets')));
 
 // Routes
-app.use(routeDefs.path, routeDefs.router);
-app.get('/', (_, res) => res.send('Node App!'));
+loadRoutes(app);
 
 // Listener
 const server = app.listen(process.env.PORT, () =>

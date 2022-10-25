@@ -3,10 +3,10 @@ import { SuperAgentTest } from "supertest";
 
 const appData = require('../../app');
 
-const app       = appData.app as Application;
-const server    = appData.server;
+const app = appData.app as Application;
+const server = appData.server;
 const supertest = require('supertest');
-const request   = supertest(app) as SuperAgentTest;
+const request = supertest(app) as SuperAgentTest;
 
 describe('Engine Module', () => {
   afterAll(() => server.close());
