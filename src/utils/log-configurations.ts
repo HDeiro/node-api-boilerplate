@@ -3,6 +3,9 @@ import { configure } from "log4js";
 export default function startLogEngine() {
   configure({
     appenders: {
+      console: {
+        type: "console"
+      },
       access: {
         type: "dateFile",
         filename: `${process.env.LOG_PATH}/base-access.log`,
@@ -27,7 +30,7 @@ export default function startLogEngine() {
     },
     categories: {
       default: {
-        appenders: [ "app", "errors" ],
+        appenders: [ "app", "errors", "console" ],
         level: process.env.LOG_LEVEL
       },
       http: {
