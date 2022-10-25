@@ -1,0 +1,39 @@
+version: '3.7'
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  node_modules:
+
+services:
+  # Example of a postgres container
+  # postgres:
+  #   build:
+  #     dockerfile: ./docker/postgres.dockerfile
+  #     context: .
+  #   env_file: .env
+  #   container_name: postgres
+  #   networks:
+  #     - app-network
+  #   ports:
+  #     - "5432:5432" # PostgreSQL Port
+
+  api-1:
+    env_file: .env
+    container_name: api-1 # Rename if you have many
+    build:
+      dockerfile: ./docker/development.dockerfile
+      context: ./
+    volumes:
+      - ./:/usr/src
+      - node_modules:/usr/src/node_modules
+    networks:
+      - app-network
+    ports:
+      - "3000:3000" # Node API port
+  # Add dependencies if you have any
+  # depends_on:
+  #   - postgres
+
