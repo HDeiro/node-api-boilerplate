@@ -30,7 +30,7 @@ export default function loadRoutes(app: Application) {
       logger.error(`Error while importing module ${routePath}. Error ${err}`);
 
       // Proceed throwing error in case it's defined to stop to run the app
-      if (process.env.BREAK_ON_ROUTE_ERROR) {
+      if (process.env.BREAK_ON_ROUTE_ERROR === '1') {
         throw err;
       }
     }
